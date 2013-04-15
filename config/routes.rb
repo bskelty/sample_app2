@@ -1,17 +1,18 @@
 SampleApp::Application.routes.draw do
+  
   get "password_resets/new"
 
   get "direct_messages/index"
 
   get "direct_messages/show"
 
-  get "logout" => "sessions#destroy", :as => "logout"
+  get "logout" => "sessions#destroy", :as => "signout"
 
-  get "login" => "sessions#new", :as => "login"
+  get "login" => "sessions#new", :as => "signin"
   
   get "signup" => "users#new", :as => "signup"
 
-  root :to => "home#index"
+  root to: 'static_pages#home'
   resources :users
   resources :sessions
   resources :password_resets

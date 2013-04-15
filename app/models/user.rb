@@ -12,6 +12,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :username, :email, :password, :password_confirmation
   has_secure_password
+  validates_presence_of :password, :on => :create
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed

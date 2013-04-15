@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
-private
+  private
 
   def signed_in_user
     unless signed_in?
