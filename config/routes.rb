@@ -6,7 +6,7 @@ SampleApp::Application.routes.draw do
 
   get "direct_messages/show"
 
-  get "logout" => "sessions#destroy", :as => "signout"
+  delete "logout" => "sessions#destroy", :as => "signout"
 
   get "login" => "sessions#new", :as => "signin"
   
